@@ -1,0 +1,52 @@
+body {
+  background-color: #ecd662;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.activity {
+  font-size: 5px;
+  border-style: solid;
+  width: 50%;
+  margin-top: 5%;
+  text-align: center;
+  margin-left: 25%;
+}
+
+.activity h3 {
+  color: #5d8233;
+}
+
+.activity h2 {
+  color: #5d8233;
+}
+
+h3 {
+  text-align: center;
+  margin-top: 5%;
+}
+
+h1 {
+  color: #5d8233;
+}
+
+button {
+  color: #284e78;
+}
+
+header {
+  text-align: left;
+  padding: 2%;
+  padding: 2%;
+  padding: 4%;
+  font-family: "McLaren", cursive;
+  background-color: #284e78;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+input {
+  border-radius: 5px;
+}
