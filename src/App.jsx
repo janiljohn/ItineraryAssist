@@ -88,8 +88,6 @@ function App() {
       <Header />
       <h3>Enter City: </h3>
       <h3>{city}</h3>
-      {/* <h3> Latitude: {lat} </h3>
-      <h3> Longitude: {lng} </h3> */}
       <Input makeURL={makeURL} />
       {activity.map((activityItem, index) => {
         return (
@@ -100,7 +98,6 @@ function App() {
             rating={rating[index]}
           />
         );
-        // return <ul>{activityItem}</ul>;
       })}
     </div>
   );
