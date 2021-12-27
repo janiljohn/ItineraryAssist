@@ -40,20 +40,25 @@ function App() {
   }
 
   function getPlaces(lat2, lng2) {
+    // var url =
+    //   "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +
+    //   lat2 +
+    //   "," +
+    //   lng2 +
+    //   "&radius=1500&type=park&key=AIzaSyDiEw5PBp6nqZbJH5etKWA3dtlI4yVv82Y#/Access-Control-Allow-Origin";
+
     var url =
       "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +
       lat2 +
       "," +
       lng2 +
-      "&radius=1500&type=park&key=AIzaSyDiEw5PBp6nqZbJH5etKWA3dtlI4yVv82Y#/Access-Control-Allow-Origin";
+      "&radius=1500&key=AIzaSyDiEw5PBp6nqZbJH5etKWA3dtlI4yVv82Y#/Access-Control-Allow-Origin";
 
     var url2 =
       "https://maps.googleapis.com/maps/api/geocode/json?address=" +
       "Sydney" +
       "&key=AIzaSyDiEw5PBp6nqZbJH5etKWA3dtlI4yVv82Y#";
 
-    //console.log(container[1].value);
-    //setActivity(container);
 
     console.log(url);
 
@@ -62,14 +67,12 @@ function App() {
       .then((result) => {
         var items = result.results;
         console.log(items[0].name);
-        // setActivity(items);
         console.log(items);
         addInformation(items);
       });
   }
 
   function addInformation(places) {
-    // console.log(places);
 
     for (var x = 0; x < places.length; x++) {
       setActivity((prevActivity) => {
