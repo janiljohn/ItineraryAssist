@@ -40,13 +40,7 @@ function App() {
   }
 
   function getPlaces(lat2, lng2) {
-    // var url =
-    //   "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +
-    //   lat2 +
-    //   "," +
-    //   lng2 +
-    //   "&radius=1500&type=park&key=AIzaSyDiEw5PBp6nqZbJH5etKWA3dtlI4yVv82Y#/Access-Control-Allow-Origin";
-
+    
     var url =
       "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +
       lat2 +
