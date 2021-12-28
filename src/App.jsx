@@ -15,18 +15,17 @@ function App() {
   const [activity, setActivity] = useState([]);
   const [rating, setRating] = useState([]);
 
-  function makeURL(info) {
-    setCity(info);
+  function makeURL(name,keyword) {
+    setCity(name);
     setActivity([]);
 
-    var str = info.replace(/\s/g, "");
+    var str = name.replace(/\s/g, "");
+    var str2 = keyword.replace(/\s/g, "");
 
     var url =
       "https://maps.googleapis.com/maps/api/geocode/json?address=" +
       str +
       "&key=AIzaSyDiEw5PBp6nqZbJH5etKWA3dtlI4yVv82Y#";
-
-    console.log(url);
 
     fetch(url)
       .then((res) => res.json())
@@ -35,18 +34,26 @@ function App() {
         setLng(result.results[0].geometry.location.lng);
         lat2 = result.results[0].geometry.location.lat;
         lng2 = result.results[0].geometry.location.lng;
-        getPlaces(lat2, lng2);
+        getPlaces(lat2, lng2, str2);
       });
   }
 
-  function getPlaces(lat2, lng2) {
+  function getPlaces(lat2, lng2, str2) {
     
+
     var url =
-      "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +
+      "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?keyword=" + str2 + "&location=" +
       lat2 +
       "," +
       lng2 +
       "&radius=1500&key=AIzaSyDiEw5PBp6nqZbJH5etKWA3dtlI4yVv82Y#/Access-Control-Allow-Origin";
+
+    // var url =
+    //   "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +
+    //   lat2 +
+    //   "," +
+    //   lng2 +
+    //   "&radius=1500&key=AIzaSyDiEw5PBp6nqZbJH5etKWA3dtlI4yVv82Y#/Access-Control-Allow-Origin";
 
     var url2 =
       "https://maps.googleapis.com/maps/api/geocode/json?address=" +
