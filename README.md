@@ -1,2 +1,0 @@
-# ItineraryAssist
-Created with CodeSandbox
